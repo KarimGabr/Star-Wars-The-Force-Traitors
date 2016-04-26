@@ -1,117 +1,86 @@
-﻿<!DOCTYPE html>
-<html manifest="offline.appcache">
-<head>
-    <meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<title>New project</title>
-	
-	<!-- Standardised web app manifest -->
-	<link rel="manifest" href="appmanifest.json" />
-	
-	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
-	<meta name="HandheldFriendly" content="true" />
-	
-	<!-- Chrome for Android web app tags -->
-	<meta name="mobile-web-app-capable" content="yes" />
-	<link rel="shortcut icon" sizes="256x256" href="icon-256.png" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <!-- All margins and padding must be zero for the canvas to fill the screen. -->
-	<style type="text/css">
-		* {
-			padding: 0;
-			margin: 0;
-		}
-		html, body {
-			background: #000;
-			color: #fff;
-			overflow: hidden;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-		canvas {
-			touch-action-delay: none;
-			touch-action: none;
-			-ms-touch-action: none;
-		}
-    </style>
-	
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-</head> 
- 
-<body> 
-	<div id="fb-root"></div>
-	
-	<script>
-	// Issue a warning if trying to preview an exported project on disk.
-	(function(){
-		// Check for running exported on file protocol
-		if (window.location.protocol.substr(0, 4) === "file")
-		{
-			alert("Exported games won't work until you upload them. (When running on the file:/// protocol, browsers block many features from working for security reasons.)");
-		}
-	})();
-	</script>
-	
-	<!-- The canvas must be inside a div called c2canvasdiv -->
-	<div id="c2canvasdiv">
-	
-		<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
-		ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
-		<canvas id="c2canvas" width="1855" height="870">
-			<!-- This text is displayed if the visitor's browser does not support HTML5.
-			You can change it, but it is a good idea to link to a description of a browser
-			and provide some links to download some popular HTML5-compatible browsers. -->
-			<h1>Your browser does not appear to support HTML5.  Try upgrading your browser to the latest version.  <a href="http://www.whatbrowser.org">What is a browser?</a>
-			<br/><br/><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx">Microsoft Internet Explorer</a><br/>
-			<a href="http://www.mozilla.com/firefox/">Mozilla Firefox</a><br/>
-			<a href="http://www.google.com/chrome/">Google Chrome</a><br/>
-			<a href="http://www.apple.com/safari/download/">Apple Safari</a><br/>
-			<a href="http://www.google.com/chromeframe">Google Chrome Frame for Internet Explorer</a><br/></h1>
-		</canvas>
-		
-	</div>
-	
-	<!-- Pages load faster with scripts at the bottom -->
-	
-	<!-- Construct 2 exported games require jQuery. -->
-	<script src="jquery-2.1.1.min.js"></script>
+    <title>Star-wars-the-force-traitors by KarimGabr</title>
+  </head>
 
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Star-wars-the-force-traitors</h1>
+        <h2></h2>
+        <a href="https://github.com/KarimGabr/Star-Wars-The-Force-Traitors" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-	
-    <!-- The runtime script.  You can rename it, but don't forget to rename the reference here as well.
-    This file will have been minified and obfuscated if you enabled "Minify script" during export. -->
-	<script src="c2runtime.js"></script>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a id="welcome-to-star-wars-the-force-traitors" class="anchor" href="#welcome-to-star-wars-the-force-traitors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Star Wars: The Force Traitors</h3>
 
-    <script>
-		// Start the Construct 2 project running on window load.
-		jQuery(document).ready(function ()
-		{			
-			// Create new runtime using the c2canvas
-			cr_createRuntime("c2canvas");
-		});
-		
-		// Pause and resume on page becoming visible/invisible
-		function onVisibilityChanged() {
-			if (document.hidden || document.mozHidden || document.webkitHidden || document.msHidden)
-				cr_setSuspended(true);
-			else
-				cr_setSuspended(false);
-		};
-		
-		document.addEventListener("visibilitychange", onVisibilityChanged, false);
-		document.addEventListener("mozvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("webkitvisibilitychange", onVisibilityChanged, false);
-		document.addEventListener("msvisibilitychange", onVisibilityChanged, false);
-		
-		if (navigator.serviceWorker && navigator.serviceWorker.register)
-		{
-			// Register an empty service worker to trigger web app install banners.
-			navigator.serviceWorker.register("sw.js", { scope: "./" });
-		}
-    </script>
-</body> 
-</html> 
+<p>Storm troopers are traitors, Darth Vader must kill them all and restore authority of the Dark Side</p>
+
+<h3>
+<a id="construct-2-game-development-engine" class="anchor" href="#construct-2-game-development-engine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Construct 2 Game Development Engine</h3>
+
+<p>Construct 2 is the most powerful Game Development Engine JavaScript based, you can export your game to the Web, Android, iOS, Windows and Blackberry.</p>
+
+<h3>
+<a id="sprite-sheet-extractor" class="anchor" href="#sprite-sheet-extractor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sprite Sheet Extractor</h3>
+
+<p>This was so useful for extracting the Sprite Sheet</p>
+
+<ul>
+<li><a href="https://github.com/ForkandBeard/Alferd-Spritesheet-Unpacker/releases">https://github.com/ForkandBeard/Alferd-Spritesheet-Unpacker/releases</a></li>
+</ul>
+
+<h3>
+<a id="game-sprites" class="anchor" href="#game-sprites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Game Sprites</h3>
+
+<p>Sprites are not original, downloaded from Web with some Photoshop Editing.</p>
+
+<h3>
+<a id="game-sounds" class="anchor" href="#game-sounds" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Game Sounds</h3>
+
+<p>Sounds credits go to:</p>
+
+<ul>
+<li><a href="http://www.littlerobotsoundfactory.com/">http://www.littlerobotsoundfactory.com/</a></li>
+<li><a href="http://www.bfxr.net/">http://www.bfxr.net/</a></li>
+<li><a href="https://soundcloud.com/paulo-bohrer-ii/star-wars-chiptune-medley">https://soundcloud.com/paulo-bohrer-ii/star-wars-chiptune-medley</a></li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/KarimGabr/Star-Wars-The-Force-Traitors/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/KarimGabr/Star-Wars-The-Force-Traitors/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/KarimGabr/Star-Wars-The-Force-Traitors"></a> is maintained by <a href="https://github.com/KarimGabr">KarimGabr</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
